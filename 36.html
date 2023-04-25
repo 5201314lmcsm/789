@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #0e1324;
+        }
+        .container {
+            width: 1980px;
+            height: 1080px;
+            /*border: 10px solid red;*/
+
+            margin: 0 auto;
+
+            display: flex;
+            flex-direction: row;
+            /*设置子元素在主轴上的对其方式: 两端对齐*/
+            /* justify-content: space-between; */
+        }
+
+        /* .left, .right, .center{
+            width: 500px;
+            height: 700px;
+            border: 10px solid blue;
+            margin: 10px;
+        }  */
+
+        .box{
+            width: 480px;
+            height: 320px;
+            border: 1px solid #20588b;
+            margin-top: 28px;
+        }
+
+        .left .left-top{
+            /*width: 400px;*/
+            /*height: 200px;*/
+            /*border: 10px solid deeppink;*/
+            margin: 10px;
+            background-color:#171C3A
+        }
+        .left .left-center{
+            /*width: 400px;*/
+            /*height: 200px;*/
+            /*border: 10px solid deeppink;*/
+            margin: 10px;
+            background-color:#171C3A
+        }
+        .left .left-bottom{
+            /*width: 400px;*/
+            /*height: 200px;*/
+            /*border: 10px solid deeppink;*/
+            margin: 10px;
+            background-color:#171C3A
+        }
+
+        .right .right-top{
+            /*width: 400px;*/
+            /*height: 200px;*/
+            /*border: 10px solid deeppink;*/
+            margin: 10px;
+            background-color:#171C3A
+        }
+        .right .right-center{
+            /*width: 400px;*/
+            /*height: 200px;*/
+            /*border: 10px solid deeppink;*/
+            margin: 10px;
+            background-color:#171C3A
+        }
+        .right .right-bottom{
+            /*width: 400px;*/
+            /*height: 200px;*/
+            /*border: 10px solid deeppink;*/
+            margin: 10px;
+            background-color:#171C3A
+        }
+
+        .center .title{
+            width: 750px;
+            height: 100px;
+            /* border: 1px solid #20588b; */
+            /* margin: 10px; */
+            /* float: left; */
+            background-image:url(./img/yy.png);
+            background-size: contain;
+            /* background-repeat: no-repeat; */
+    
+        }
+
+        .center .money{
+            width: 750px;
+            height: 100px;
+            /* border: 1px solid #20588b; */
+            /*margin: 10px;*/
+        }
+
+        .center .center-chart{
+            width: 750px;
+            height: 490px;
+            /* border: 1px solid #20588b; */
+            /*margin: 10px;*/
+        }
+
+        .center .money-detail{
+            width: 750px;
+            height: 320px;
+            border: 1px solid #20588b;
+            /*margin: 5px;*/
+            background-color:#171C3A
+        }
+     .text{
+            color: #FCFDF5;
+            margin-left: 15px;
+            line-height: 60px;
+        }
+        #center-mm{
+            display: flex;
+            margin: 0 auto;
+            width: 750px;
+            height: 110px;
+            margin-left: 50px;
+        }
+       .money #center-mm p{
+            display: block;
+            width:40px;
+            height: 40px;
+            border: 3px solid #20588b;
+          text-align: center;
+          margin-top: 30px;
+          margin-left: 20px;
+            font-size: xx-large;
+            font-weight: 500;
+            color: #35CCFD;
+            background-color: #0D1E53;
+        }
+        span{
+            width: 60px;
+            height: 60px;
+            font-size: xx-large;
+            font-weight: 500;
+            color: #35CCFD;
+            text-align: center;
+            padding-top: 50px;
+        }
+        h2{font-size: x-large; font-weight: 500; color: #35CCFD;padding-top: 50px;padding-left: 30px;}
+    
+        table,
+        td{
+            border-spacing: 0 5px;
+            margin: 0 auto;
+        }
+
+
+        th {
+            padding: 0;
+            width: 142px;
+        }
+
+        th {
+            color: #A5B7C9;
+        }
+
+        td {
+            color: #ffffff;
+            text-align: center;
+            height: 35px;
+        
+        }
+
+        .money-detail tr{
+            display: block;
+            width: 600px;
+            height: 55px;
+            border-top: 1px dotted #8181819d;
+            margin:  auto 0;
+            padding-top: 5px;
+            letter-spacing: 1px;
+        }
+
+        .money-detail tr:nth-child(1){
+            border: none;
+            height: 60px;
+            margin:  auto 0;
+            font-size: 25px;
+            font-weight: 500px;
+            
+        }
+        .money-detail tr:nth-child(2){
+            border-top: 1px solid #8181819d;
+        }
+
+        .money-detail tr:not(:first-child){
+            font-size: 18px;
+        }
+        .tr-index {
+            width: 20px;
+            margin-right: 30px;
+            border-radius: 6px;
+        }
+        li::marker{
+            color: #f24f4f;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="left">
+        <div class="left-top box" id="chart-scale">
+            
+        </div>
+
+        <div class="left-center box" id="chart-seat">
+        </div>
+        <div class="left-bottom box" id="chart-ret">
+        </div>
+    </div>
+
+    <div class="center">
+
+        <div class="title" id="chart-run">
+        </div>
+        <div class="money">
+            <div id="center-mm">
+                <p>1</p>
+                <p>3</p>
+                <span>,</span>
+                <p>3</p>
+                <p>8</p>
+                <p>8</p>
+                <span>,</span>
+                <p>2</p>
+                <p>8</p>
+                <p>8</p>
+                <h2>元</h2>
+               </div>
+        </div>
+        <div class="center-chart" id="chart-mun">
+
+        </div>
+        <div class="money-detail">
+            <table>
+
+                <tr>
+                    <td><li></li></td>
+                    <td>saddd<td>
+                </tr>
+                <tr>
+                    <td><span class="tr-index"><img src="./img/奖牌一.png" alt=""></span></td>
+                    <td>嘎嘎乱杀</td>
+                </tr>
+                <tr>
+                    <td><span class="tr-index"><img src="./img/奖牌二.png" alt=""></span></td>
+
+                    <td>美滋滋</td>
+
+                </tr>
+                <tr>
+                    <td><span class="tr-index"><img src="./img/奖牌三.png" alt=""></span></td>
+
+                    <td>英雄联盟</td>
+
+                </tr>
+                <tr>
+                    <td><span class="tr-index"><img src="./img/奖牌四.png" alt=""></span></td>
+
+                    <td>英雄联盟手游</td>
+
+                </tr>
+            </table>
+        </div>
+
+    </div>
+    <div class="right">
+        <div class="right-top box" id="chart-scalo">
+        </div>
+        <div class="right-center box" id="chart-seot">
+        </div>
+        <div class="right-bottom box" id="chart-rat">
+        </div>
+    </div>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.1/echarts.min.js"></script>
+<script src="./js/scale.js"></script>
+<script src="./js/scalo.js"></script>
+<script src="./js/seat.js"></script>
+<script src="./js/seot.js"></script>
+<script src="./js/ret.js"></script>
+<script src="./js/rat.js"></script>
+<script src="./js/run.js"></script>
+<script src="./js/mun.js"></script>
+</body>
+</html>
